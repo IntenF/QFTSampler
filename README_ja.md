@@ -39,7 +39,8 @@ transformer_list = [Constant(M), AffineNonLinearBasis(N,M)]
 orch = Orchestrator(N=N, M=M, trasnsformer_list=transformer_list, target=target)
 
 # 学習しつつサンプリング（この例ではサンプルはすべて捨てる）
-for _ in range(1000):
+# １０分ほどかかる
+for _ in range(10000):
   # CE=Cross Entropy
   probs, samples = orch.step(sample_num=32, lr=1e-2, train=True, loss_func='CE')
   #samples: サンプルされた点

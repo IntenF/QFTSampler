@@ -38,7 +38,8 @@ transformer_list = [Constant(M), AffineNonLinearBasis(N,M)]
 # Create an orchestrator which samples while learning
 orch = Orchestrator(N=N, M=M, trasnsformer_list=transformer_list, target=target)
 
-for _ in range(1000):
+# It takes about 10 minutes to run the below code
+for _ in range(10000):
   # CE=Cross Entropy
   probs, samples = orch.step(sample_num=32, lr=1e-2, train=True, loss_func='CE')
   #samples: sampled random points
