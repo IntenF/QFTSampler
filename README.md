@@ -7,7 +7,7 @@ quantum Fourier Transform (QFT) is simulated with your classical computer at hig
 
 ## Description
 QFTSampler learns an arbitrary target distribution by machine learning and samples it at high speed using QFT.
-The sampled random numbers do not necessarily match the target distribution, but can be sampled from a distribution that matches the target distribution by appropriately rejecting/adopting by Metropolis Hasting (MH) method.
+The sampled random numbers do not necessarily match the target distribution, but can be sampled from a distribution that matches the target distribution by appropriately rejecting/adopting by [Metropolis Hasting (MH) method](https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm).
 
 ## Install
 
@@ -71,7 +71,7 @@ plt.show()
 - matplotlib(for visualization)
 - tqdm(for process visualization)
 
- Please run below code to install Those packages.
+ Please run below code to install those packages for demo.
  ```bash
  pip install scipy POT matplotlib tqdm
  ```
