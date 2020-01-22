@@ -15,7 +15,7 @@ QFTSamplerは任意のターゲット分布を機械学習によって学習しQ
 pip install git+https://github.com/IntenF/QFTSampler.git
 ```
 
-## デモ
+## 使い方の例
 
 ```python
 from QFTSampler import Orchestrator
@@ -65,11 +65,16 @@ plt.show()
 - Python 3.7
 - numpy
 
-### option
+### デモ用
 - scipy(for expample target distribution (ANPAN))
 - ot(to calculate Wasserstein Distance)
 - matplotlib(for visualization)
 - tqdm(for process visualization)
+
+ デモ用のパッケージをインストールするためには以下のコードを実行してください
+ ```bash
+ pip install scipy POT matplotlib tqdm
+ ```
 
 ## 使い方
 1. あなたの作りたい分布をOrchestrator用にコードを書きます．この際，QFTSampler.ExpTargetDistsにある例を参考にしてください．

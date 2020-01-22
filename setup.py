@@ -7,7 +7,7 @@ setup(
     author = 'Taichi Nakamura, Katsuhiro Endo',
     author_email = 'taichi.nakamura@keio.jp',
     description = 'QFTSampler',
-    install_requires = ['numpy', 'scipy', 'matplotlib', 'tqdm', 'POT'],
+    install_requires = ['numpy', ],
     packages = find_packages(),
 
 )

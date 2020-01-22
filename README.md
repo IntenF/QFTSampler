@@ -15,7 +15,7 @@ The sampled random numbers do not necessarily match the target distribution, but
 pip install git+https://github.com/IntenF/QFTSampler.git
 ```
 
-## Demo
+## Example code
 
 ```python
 from QFTSampler import Orchestrator
@@ -65,11 +65,17 @@ plt.show()
 - Python 3.7
 - numpy
 
-### option
+### for demo
 - scipy(for expample target distribution (ANPAN))
 - ot(to calculate Wasserstein Distance)
 - matplotlib(for visualization)
 - tqdm(for process visualization)
+
+ Please run below code to install Those packages.
+ ```bash
+ pip install scipy POT matplotlib tqdm
+ ```
+
 
 ## Licence
 This software is released under the MIT License, see LICENSE.txt.
