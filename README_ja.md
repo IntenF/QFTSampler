@@ -9,6 +9,12 @@ IntenF/QFTSampler - 量子フーリエ変換を利用したサンプラー．
 QFTSamplerは任意のターゲット分布を機械学習によって学習しQFTを使って高速にサンプリングします．
 サンプリングされた乱数は必ずしもターゲット分布と一致しませんが，メトロポリス・ヘイスティング(MH法)によって適切に棄却/採択することでターゲット分布と一致する分布からサンプリングできます．
 
+## インストール方法
+
+```bash
+pip install git+https://github.com/IntenF/QFTSampler.git
+```
+
 ## デモ
 
 ```python
@@ -71,12 +77,6 @@ plt.show()
 1. transformer_list[i]は1~(i-1)次元までのサンプル値を入力に取り，i次元目の乱数を生成する量子状態φ_iを生成します．
 1. Orchestrator.stepを使ってサンプリングと学習を行います．
 
-
-## インストール方法
-
-```bash
-git clone git@github.com:IntenF/QFTSampler.git
-```
 
 ## Licence
 This software is released under the MIT License, see LICENSE.txt.
