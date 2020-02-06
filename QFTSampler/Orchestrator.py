@@ -5,11 +5,11 @@ import pickle
 from .QFTSampler import QFTSampler
 
 class Orchestrator:
-    def __init__(self, N, M, trasnsformer_list, target , ):
+    def __init__(self, N, M, transformer_list, target , ):
         self.QFTSampler = QFTSampler()
         self.M = M
         self.N = N
-        self.transformer_list = trasnsformer_list
+        self.transformer_list = transformer_list
         self.target = target
 
     def step(self,train=True,sample_num = 64,lr=1, loss_func='CE', ):
@@ -51,6 +51,12 @@ class Orchestrator:
 
         return (q, np.array(samples_list).T,)
 
+    def save(self, filename):
+        for t in self.transformer_list:
+            t.clear()
+        with open(filename, mode='wb') as wh:
+            pickle.dump(self, wh)
+
     def pmap(self, stride=16):
         dim = len(self.transformer_list)
         target = self.target
@@ -75,11 +81,7 @@ class Orchestrator:
             qs_list.append( self.QFTSampler.q_for_samples(self.N,self.M,samples_list[-1],phis_list[-1]) )
         return np.prod([ qs.reshape(*[len(dst_list[0]), ]*dim) for qs in qs_list ], axis=0)
 
-        def save(self, filename):
-            for t in self.transformer_list:
-                t.clear()
-            with open(filename, mode='wb') as wh:
-                pickle.dump(self, wh)
+
 
 def load_orchestrator(filename):
     with open(filename, mode='rb') as rh:

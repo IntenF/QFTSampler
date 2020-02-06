@@ -118,4 +118,4 @@ venv.bak/
 .idea
 
 #data is ignored for large capacity
-data/
+.data

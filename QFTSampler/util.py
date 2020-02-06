@@ -5,7 +5,7 @@ from tqdm import tqdm
 
 def selfMH(target, probed, sampled, verbose=False ):
     '''
-    自己メトロポリスヘイスティング法
+    self Metropolis-Hastings:自己メトロポリスヘイスティング法
     globalサンプリングなMHサンプリング
     sampledは提案分布のサンプル値の配列
     targetは目標分布で関数当てる、probedはsampledの取りうる確率の配列を格納する。
