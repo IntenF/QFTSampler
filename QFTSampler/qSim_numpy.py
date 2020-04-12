@@ -72,8 +72,8 @@ class Vstate():
 
 def sample(ITER,M,N,low_state=[1.+0.j], verbose=True):
     res_li = []
-
-    state_target = Vstate(M,N)
+    
+    state_target = Vstate(M,M)
     wri = low_state
     for i in range(len(wri)):
         state_target.write(i,wri[i])
@@ -81,16 +81,30 @@ def sample(ITER,M,N,low_state=[1.+0.j], verbose=True):
 
     def get():
         bar = Bar(ITER, verbose=verbose)
-        for i in range(ITER):
-            bar(i) if verbose > 0 else None
+        for _i in range(ITER):
+            bar(_i) if verbose > 0 else None
 
             state = state_target.copy()
 
             res =[None for i in range(N)]
-            for i in range(N-1,-1,-1):
-                ii = i if i<M else M
-                state.H(ii)
-                v= state.degenerate(ii)
+            for i in range(N-1,M-1,-1):
+                #print ("DD",i)
+                v = np.random.randint(2)
+                res[i]=v
+                if v==1:
+                    for j in range(i):
+                        tar = i-j-1
+                        if (tar<M):
+                            state.Rotate(tar,np.pi/(2**j)/2)
+            
+            for i in range(M-1,-1,-1):
+                #print ("DD",i)
+                try:
+                    state.H(i)
+                except ValueError:
+                    print (i)
+                    assert 1==0
+                v= state.degenerate(i)
                 res[i]=v
                 for j in range(i):
                     tar = i-j-1
