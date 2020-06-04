@@ -1,5 +1,10 @@
 QFTSampler (Quantum Fourier Transform Sampler)
+
+日本語のReadmeは[こちら](README_ja.md)
+
 ====
+
+Article: [Quantum self-learning Monte Carlo with quantum Fourier transform sampler](https://arxiv.org/abs/2005.14075)
 
 ## Overview
 IntenF/QFTSampler is Random number Sampler using Quantum Fourier Transform.
