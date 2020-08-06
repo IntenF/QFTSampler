@@ -40,7 +40,7 @@ target = Target_gauss2d_dependent(N=N, M=M, )
 transformer_list = [Constant(M), AffineNonLinearBasis(N,M)]
 
 # 学習しつつサンプリングするオーケストレーターを作成
-orch = Orchestrator(N=N, M=M, trasnsformer_list=transformer_list, target=target)
+orch = Orchestrator(N=N, M=M, transformer_list=transformer_list, target=target)
 
 # 学習しつつサンプリング（この例ではサンプルはすべて捨てる）
 # １０分ほどかかる

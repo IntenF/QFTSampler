@@ -41,7 +41,7 @@ target = Target_gauss2d_dependent(N=N, M=M, )
 transformer_list = [Constant(M), AffineNonLinearBasis(N,M)]
 
 # Create an orchestrator which samples while learning
-orch = Orchestrator(N=N, M=M, trasnsformer_list=transformer_list, target=target)
+orch = Orchestrator(N=N, M=M, transformer_list=transformer_list, target=target)
 
 # It takes about 10 minutes to run the below code
 for _ in range(10000):
